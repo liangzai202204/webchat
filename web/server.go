@@ -8,5 +8,4 @@ import "net/http"
 type Server interface {
 	http.Handler
 	Start(addr string) error
-	addRoute(method string, addr string, handleFunc HandleFunc)
 }
