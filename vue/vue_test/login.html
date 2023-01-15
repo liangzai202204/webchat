@@ -1,41 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="/vue/css/login.css" rel="stylesheet" type="text/css"/>
-    <script type="text/javascript" src="../vue.js"></script>
-</head>
-<body>
-<div class="login" id="login">
-    <div class="header">登录</div>
-    <div class="container">
-        <label>
-            <input type="text" placeholder="请输入用户名">
-        </label>
+{{define  "/user/login.shtml"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="/vue/css/login.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="/vue/vue/vue.js"></script>
+    </head>
+    <body>
+    <div class="login" id="login">
+        <div class="header">登录</div>
+        <div class="container">
+            <label>
+                <input type="text" placeholder="请输入用户名">
+            </label>
 
+        </div>
+        <div class="container1">
+            <label>
+                <input type="password" placeholder="请输入密码">
+            </label>
+            <span class="left"></span>
+            <span class="right"></span>
+            <span class="top"></span>
+            <span class="bottom"></span>
+        </div>
+        <div class="btn" style="" >登录</div>
+        <a>{{ . }}</a>
+        <script type="text/javascript">
+            Vue.config.productionTip=false
+            const vm = new Vue({
+                el: "#login",
+                data: {
+                    name: "登录--"
+                }
+            });
+        </script>
     </div>
-    <div class="container1">
-        <label>
-            <input type="password" placeholder="请输入密码">
-        </label>
-        <span class="left"></span>
-        <span class="right"></span>
-        <span class="top"></span>
-        <span class="bottom"></span>
-    </div>
-    <div class="btn" style="" >{{name}}</div>
-    <script type="text/javascript">
-        Vue.config.productionTip=false
-        const vm = new Vue({
-            el: "#login",
-            data: {
-                name: "登录--"
-            }
-        });
-    </script>
-</div>
-</body>
-</html>
-
+    </body>
+    </html>
+{{end}}

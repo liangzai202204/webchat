@@ -39,22 +39,22 @@ func TestAddRoute(t *testing.T) {
 	}
 	wantRes := &routeRegister{
 		trees: map[string]*node{
-			http.MethodPost: &node{
+			http.MethodPost: {
 				path:   "/",
 				handle: mockHandler,
 				children: map[string]*node{
-					"login": &node{
+					"login": {
 						path:   "login",
 						handle: mockHandler,
 					},
-					"register": &node{
+					"register": {
 						path:   "register",
 						handle: mockHandler,
 					},
-					"user": &node{
+					"user": {
 						path: "user",
 						children: map[string]*node{
-							"msg": &node{
+							"msg": {
 								path:   "msg",
 								handle: mockHandler,
 							},
@@ -132,7 +132,7 @@ func TestFindRoute(t *testing.T) {
 			node: &node{
 				path: "user",
 				children: map[string]*node{
-					"msg": &node{
+					"msg": {
 						path:   "msg",
 						handle: mockHandler,
 					},
